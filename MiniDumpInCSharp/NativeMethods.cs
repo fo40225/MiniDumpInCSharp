@@ -32,6 +32,7 @@
         /// <param name="CallbackParam">A pointer to a MINIDUMP_CALLBACK_INFORMATION structure that specifies a callback routine which is to receive extended minidump information. If the value of this parameter is NULL, no callbacks are performed.</param>
         /// <returns>If the function succeeds, the return value is TRUE; otherwise, the return value is FALSE. To retrieve extended error information, call GetLastError. Note that the last error will be an HRESULT value. If the operation is canceled, the last error code is HRESULT_FROM_WIN32(ERROR_CANCELLED).</returns>
         [DllImport("dbghelp.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
         internal static extern Boolean MiniDumpWriteDump(
             IntPtr hProcess,
             UInt32 ProcessId,
